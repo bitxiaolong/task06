@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.LeaveWordsDao">
+
+    <insert id="postleaveword">
+        insert into leavewords
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="work_id!=0">
+                work_id,
+            </if>
+            <if test="leaveword!=null">
+                leaveword,
+            </if>
+            <if test="state!=null">
+                state,
+            </if>
+            <if test="compileby">
+                compileby,
+            </if>
+            <if test="parent_id!=0">
+                parent_id,
+            </if>
+            <if test="create_at!=null">
+                create_at,
+            </if>
+            <if test="update_at!=null">
+                update_at,
+            </if>
+            <if test="nickname != null">
+                nickname,
+            </if>
+        </trim>
+                    values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="work_id!=0">
+                #{work_id},
+            </if>
+            <if test="leaveword!=null">
+                #{leaveword},
+            </if>
+            <if test="state!=null">
+                #{state},
+            </if>
+            <if test="compileby!=null">
+                #{compileby},
+            </if>
+            <if test="parent_id!=0">
+                #{parent_id},
+            </if>
+            <if test="create_at!=null">
+                #{create_at},
+            </if>
+            <if test="update_at!=null">
+                #{update_at},
+            </if>
+            <if test="nickname != null">
+                #{nickname}
+            </if>
+        </trim>
+    </insert>
+
+
+</mapper>

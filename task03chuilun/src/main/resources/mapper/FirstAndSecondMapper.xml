@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.FirstAndSecondDao">
+
+<select id="showAll" resultType="com.pojo.FirstAndSecond">
+  select * from firstandsecond where state = 1
+</select>
+
+  <select id="searchsecond" resultType="com.pojo.FirstAndSecond" parameterType="string">
+    select * from firstandsecond where name like concat('%',#{name},'%') and state = 1 and parent_id > 0
+  </select>
+</mapper>
